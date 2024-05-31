@@ -13,7 +13,7 @@ const Service = () => {
             <Col lg="3" md="4" key={index}>
               <motion.div
                 whileHover={{ scale: 1.1 }}
-                className="service_item flex justify-center align-items-center rounded p-2"
+                className="service_item flex justify-center align-items-center rounded p-2 md:mb-2 xl:mb-0"
                 style={{ backgroundColor: `${item.background}` }}
               >
                 <span className="bg-white rounded-circle p-2 flex justify-center align-items-center">

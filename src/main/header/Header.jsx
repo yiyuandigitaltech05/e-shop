@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef,useEffect} from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Header.css";
@@ -17,8 +17,26 @@ const Header = () => {
       display: "Cart",
     },
   ];
+  
+  const headerRef = useRef(null)
+  const stickyHeaderFunc =()=>{
+    window.addEventListener('scroll',()=>{
+      if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+        headerRef.current.classList.add("sticky_header")
+      }else{
+        headerRef.current.classList.remove("sticky_header")
+      }
+    })
+  }
+
+  useEffect(()=>{
+    stickyHeaderFunc();
+
+    return ()=>window.removeEventListener("scroll",stickyHeaderFunc)
+  },[])
+  
   return (
-    <div className="container">
+    <div className="container p-0" ref={headerRef}>
       <nav className="nav_wrap">
         <div className="logo">
           <motion.span className="main_logo" whileHover={{ scale: 1.1 }}>

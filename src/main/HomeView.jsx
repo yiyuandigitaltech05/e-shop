@@ -53,9 +53,6 @@ const HomeView = () => {
                   quo laborum est iste eligendi nulla ipsam. Similique quas
                   totam amet maiores officia, vitae quisquam animi?
                 </p>
-                <div className="text-center">
-                  <Button className="buy_btn bg-dark ">SHOP NOW</Button>
-                </div>
               </div>
             </Col>
             <Col lg="6" md="6">
